@@ -4,23 +4,41 @@ using namespace std;
 
 int main() 
 {
-	int Count = 0;
-	cin >> Count;
-
-	for (int i = 1; i <= Count; ++i)
+	int World[10][10] =
 	{
-		for (int j = 1; j <= Count; ++j)
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+		{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+		{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+		{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+		{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+		{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+		{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+		{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+	};
+
+	int PlayerX = 1;
+	int PlayerY = 1;
+	char PlayerShape = 'P';
+
+	char Sprites[10] = { ' ', '*', };
+
+	for (int Y = 0; Y < 10; ++Y)
+	{
+		for (int X = 0; X < 10; ++X)
 		{
-			if (j < i)
+			if (PlayerX == X && PlayerY == Y)
 			{
-				cout << " ";
+				cout << "P";
 			}
 			else
 			{
-				cout << "*";
+				cout << Sprites[World[Y][X]];
 			}
 		}
-		cout << "\n";
+		cout << endl;
 	}
+
 	return 0;
 }
