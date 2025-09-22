@@ -32,6 +32,15 @@ char Sprites[10] = { ' ', '*', };
 
 int KeyCode;
 
+bool Predict(int NewX, int NewY)
+{
+	if (World[NewY][NewX] == 0)
+	{
+		return true;
+	}
+	return false;
+}
+
 void Input()
 {
 	//Input
@@ -43,28 +52,28 @@ void Process()
 	//Process
 	if (KeyCode == 'w')
 	{
-		if (World[PlayerY - 1][PlayerX] != 1)
+		if (Predict(PlayerX, PlayerY - 1))
 		{
 			PlayerY--;
 		}
 	}
 	else if (KeyCode == 's')
 	{
-		if (World[PlayerY + 1][PlayerX] != 1)
+		if (Predict(PlayerX, PlayerY + 1))
 		{
 			PlayerY++;
 		}
 	}
 	else if (KeyCode == 'a')
 	{
-		if (World[PlayerY][PlayerX - 1] != 1)
+		if (Predict(PlayerX - 1, PlayerY))
 		{
 			PlayerX--;
 		}
 	}
 	else if (KeyCode == 'd')
 	{
-		if (World[PlayerY][PlayerX + 1] != 1)
+		if (Predict(PlayerX + 1, PlayerY))
 		{
 			PlayerX++;
 		}
