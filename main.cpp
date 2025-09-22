@@ -2,6 +2,7 @@
 #include <conio.h>	// c standard
 #include <vector>
 #include <algorithm>
+#include <string>
 
 using namespace std;
 
@@ -85,13 +86,20 @@ void Render()
 
 int main() 
 {
-	// Frame, DeltaSeconds(1/60)
-	while(bIsRunning)
-	{
-		Input();
-		Process();
-		Render();
-	}
+	//char Greeting[6] = { 'H', 'e', 'l', 'l', 'o', '\0'};
+	//char Greeting[6] = "Hello";
+	string Greeting1 = "Hello";
+	string Greeting2 = "World";
+
+	cout << Greeting1 + " " + Greeting2 << endl;
+
+	//// Frame, DeltaSeconds(1/60)
+	//while(bIsRunning)
+	//{
+	//	Input();
+	//	Process();
+	//	Render();
+	//}
 
 	return 0;
 }
