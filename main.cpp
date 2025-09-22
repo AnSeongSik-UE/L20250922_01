@@ -43,19 +43,31 @@ void Process()
 	//Process
 	if (KeyCode == 'w')
 	{
-		PlayerY--;
+		if( PlayerY > 1)
+		{
+			PlayerY--;
+		}
 	}
 	else if (KeyCode == 's')
 	{
-		PlayerY++;
+		if (PlayerY < 8)
+		{
+			PlayerY++;
+		}
 	}
 	else if (KeyCode == 'a')
 	{
-		PlayerX--;
+		if (PlayerX > 1)
+		{
+			PlayerX--;
+		}
 	}
 	else if (KeyCode == 'd')
 	{
-		PlayerX++;
+		if (PlayerX < 8)
+		{
+			PlayerX++;
+		}
 	}
 	else if (KeyCode == 'q')
 	{
@@ -86,20 +98,13 @@ void Render()
 
 int main() 
 {
-	//char Greeting[6] = { 'H', 'e', 'l', 'l', 'o', '\0'};
-	//char Greeting[6] = "Hello";
-	string Greeting1 = "Hello";
-	string Greeting2 = "World";
-
-	cout << Greeting1 + " " + Greeting2 << endl;
-
-	//// Frame, DeltaSeconds(1/60)
-	//while(bIsRunning)
-	//{
-	//	Input();
-	//	Process();
-	//	Render();
-	//}
+	// Frame, DeltaSeconds(1/60)
+	while(bIsRunning)
+	{
+		Input();
+		Process();
+		Render();
+	}
 
 	return 0;
 }
